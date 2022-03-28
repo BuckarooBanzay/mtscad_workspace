@@ -24,7 +24,7 @@ local function diag_x_line(ctx, count)
     end
 end
 
-return function(ctx, opts)
+local function main(ctx, opts)
     -- filler
     ctx
     :with(opts.filler)
@@ -59,3 +59,15 @@ return function(ctx, opts)
         :execute(diag_x_line, opts.height-1)
     end
 end
+
+-- TODO: proper "default" params with main- and module-support
+return {
+    main = main,
+    defaults = {
+        height = 4,
+        width = 5,
+        slopes = "moreblocks:slope_stone",
+        stairs = "moreblocks:stair_stone_alt_4",
+        filler = "default:stone"
+    }
+}
