@@ -24,7 +24,7 @@ local function diag_x_line(ctx, count)
     end
 end
 
-local function main(ctx, opts)
+return function(ctx, opts)
     -- filler
     ctx
     :with(opts.filler)
@@ -58,11 +58,7 @@ local function main(ctx, opts)
         :translate(0, 0, z)
         :execute(diag_x_line, opts.height-1)
     end
-end
-
--- TODO: proper "default" params with main- and module-support
-return {
-    main = main,
+end, {
     defaults = {
         height = 4,
         width = 5,
