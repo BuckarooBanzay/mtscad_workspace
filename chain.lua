@@ -29,12 +29,24 @@ local function half_link(ctx, opts)
     :set_node()
 end
 
-return function(ctx, opts)
+local function full_chain(ctx, opts)
     ctx
-    :execute(half_link, opts)
-    :translate(7, 0, 4)
+    :translate(1, 0, 4)
     :rotate(0, 180, 0)
     :execute(half_link, opts)
+
+    ctx
+    :translate(0, -2, 2)
+    :rotate(90, 0, 0)
+    :execute(half_link, opts)
+end
+
+return function(ctx, opts)
+    ctx
+    :execute(full_chain, opts)
+    :translate(7, 0, 0)
+    :rotate(90, 0, 0)
+    :execute(full_chain, opts)
 end, {
     defaults = {
         fullnode = "default:steelblock",

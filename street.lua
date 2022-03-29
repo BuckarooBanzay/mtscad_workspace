@@ -1,10 +1,4 @@
-
-
 return function(ctx, opts)
-    opts.width = opts.width or 16
-    opts.length = opts.length or 10
-    opts.borderwidth = opts.borderwidth or 3
-
     ctx
     :with(opts.border)
     :cube(opts.borderwidth, 2, opts.length)
@@ -14,4 +8,15 @@ return function(ctx, opts)
     :translate(opts.width - (2*opts.borderwidth), 0, 0)
     :with(opts.border)
     :cube(opts.borderwidth, 2, opts.length)
-end
+end, {
+    defaults = {
+        width = 16,
+        length = 10,
+        borderwidth = 3,
+        border = "default:stonebrick",
+        pavement = {
+            ["default:cobble"] = 1,
+            ["default:stone"] = 2
+        }
+    }
+}

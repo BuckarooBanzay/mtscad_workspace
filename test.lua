@@ -1,5 +1,8 @@
 return function(ctx)
     ctx
-    :with("default:stone")
-    :line(4,20,4)
+    :with({
+        ["default:stone"] = 3,
+        ["default:cobble"] = 1,
+    })
+    :sphere(5)
 end
