@@ -31,22 +31,21 @@ end
 
 local function full_chain(ctx, opts)
     ctx
-    :translate(1, 0, 4)
-    :rotate(0, 180, 0)
+    :translate(0, 0, -2)
+    :rotate(0,0,180)
     :execute(half_link, opts)
 
     ctx
-    :translate(0, -2, 2)
-    :rotate(90, 0, 0)
+    :translate(-1, -2, 0)
+    :rotate(90,0,0)
     :execute(half_link, opts)
 end
 
 return function(ctx, opts)
     ctx
+    :rotate(0 ,0 ,0)
     :execute(full_chain, opts)
-    :translate(7, 0, 0)
-    :rotate(90, 0, 0)
-    :execute(full_chain, opts)
+
 end, {
     defaults = {
         fullnode = "default:steelblock",

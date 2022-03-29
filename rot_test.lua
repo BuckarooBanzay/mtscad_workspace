@@ -1,24 +1,36 @@
-return function(ctx)
+local function axes(ctx, opts)
+    ctx
+    :with("default:stone")
+    :set_node()
+
     ctx
     :translate(1,0,0)
     :with("wool:red")
-    :cube(10,1,1)
-
-    ctx
-    :with("wool:blue")
-    :rotate(0,90,0)
-    :translate(1,0,0)
-    :cube(10,1,1)
+    :cube(opts.size,1,1)
 
     ctx
     :with("wool:green")
-    :rotate(0,180,0)
-    :translate(1,0,0)
-    :cube(10,1,1)
+    :translate(0,1,0)
+    :cube(1,opts.size,1)
 
     ctx
-    :with("wool:yellow")
-    :rotate(0,270,0)
-    :translate(1,0,0)
-    :cube(10,1,1)
+    :with("wool:blue")
+    :translate(0,0,1)
+    :cube(1,1,opts.size)
 end
+
+return function(ctx, opts)
+    ctx
+    :with("default:mese")
+    :set_node()
+
+    ctx
+    :rotate(-90, 0, 0)
+    :translate(0, 0, 2)
+    :execute(axes, opts)
+
+end, {
+    defaults = {
+        size = 3
+    }
+}
