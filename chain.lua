@@ -43,7 +43,7 @@ end
 
 return function(ctx, opts)
     ctx
-    :rotate(0 ,0 ,0)
+    :rotate(0, 0 ,0)
     :execute(full_chain, opts)
 
 end, {

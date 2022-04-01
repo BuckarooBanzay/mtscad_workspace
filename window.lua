@@ -22,6 +22,7 @@ local function window(ctx, opts)
 end
 
 return function(ctx, opts)
+    --[[
    ctx
    :execute(window, opts)
    :translate(10, 0, 0)
@@ -32,10 +33,10 @@ return function(ctx, opts)
    :translate(0, 0, 10)
    :rotate(0, 270, 0)
    :execute(window, opts)
-
+    --]]
    ctx
-   :translate(10, 0, 10)
-   :rotate(0, 0, 90)
+   --:translate(10, 0, 10)
+   :rotate(0, -90, 0)
    :execute(window, opts)
 
 end, {
