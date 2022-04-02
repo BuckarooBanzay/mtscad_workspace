@@ -1,4 +1,10 @@
-local function partition(size_x, size_y)
+
+-- creates 2D partitions
+return function(opts)
+    local size_x = opts.size_x or 30
+    local size_y = opts.size_y or 30
+    local min_size = opts.min_size or 5
+
     local parts = {
         {pos={0,0}, size={size_x, size_y}}
     }
@@ -6,10 +12,11 @@ local function partition(size_x, size_y)
     for _=1,math.random(10)+5 do
         local part = parts[math.random(#parts)]
 
-        if part.size[1] > 10 and part.size[2] > 10 then
+        if part.size[1] > (min_size*3) and part.size[2] > (min_size*3) then
             -- slice
             local axis = math.random(2)
-            local size1 = math.random(5) + 3
+            local third_size = math.floor(part.size[axis] / 3)
+            local size1 = third_size + math.random(third_size)
             local size2 = part.size[axis] - size1
 
             -- duplicate
@@ -30,40 +37,3 @@ local function partition(size_x, size_y)
 
     return parts
 end
-
-local nodes = {
-    "default:glass",
-    "default:stone",
-    "default:cobble",
-    "default:mese",
-    "default:steelblock",
-    "wool:red",
-    "wool:green",
-    "wool:yellow",
-    "wool:black",
-    "wool:white",
-    "wool:blue",
-    "wool:orange",
-    "wool:violet"
-}
-
-return function(ctx, opts)
-    -- partition
-    local partitions = partition(opts.size_x, opts.size_y)
-    print("Got " .. #partitions .. " partitions")
-
-    -- visualize
-    for i, p in ipairs(partitions) do
-        print(dump(p))
-        ctx
-        :with(nodes[i])
-        :translate(p.pos[1], 0, p.pos[2])
-        :cube(p.size[1], 1, p.size[2])
-    end
-
-end, {
-    defaults = {
-        size_x = 30,
-        size_y = 30
-    }
-}
