@@ -1,4 +1,7 @@
 
+require_mod("scifi_nodes")
+require_mod("moreblocks")
+
 local function slice(ctx, opts)
     local fn = opts.full_node
     local an = "air"

@@ -14,6 +14,8 @@ return function(ctx)
     })
 end
 --]]
+require_mod("default")
+require_mod("moreblocks")
 
 return function(ctx, opts)
     opts = merge_table({

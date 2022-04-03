@@ -7,5 +7,6 @@ read_globals = {
 	"dump", "print",
 
 	-- mtscad
-	"merge_table"
+	"merge_table",
+	"require_mod"
 }

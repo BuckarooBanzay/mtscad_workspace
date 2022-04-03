@@ -1,5 +1,7 @@
 
 local partition = load("partition")
+require_mod("default")
+require_mod("wool")
 
 local nodes = {
     "default:glass",

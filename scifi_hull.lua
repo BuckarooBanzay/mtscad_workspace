@@ -1,4 +1,5 @@
 local partition = load("partition")
+require_mod("scifi_nodes")
 
 return function(ctx, opts)
     opts = merge_table({
