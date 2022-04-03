@@ -42,13 +42,12 @@ local function full_chain(ctx, opts)
 end
 
 return function(ctx, opts)
+    opts = merge_table({
+        fullnode = "default:steelblock",
+        slopenode = "moreblocks:slope_steelblock"
+    }, opts)
+
     ctx
     :rotate(0, 0 ,0)
     :execute(full_chain, opts)
-
-end, {
-    defaults = {
-        fullnode = "default:steelblock",
-        slopenode = "moreblocks:slope_steelblock"
-    }
-}
+end

@@ -4,5 +4,8 @@ read_globals = {
 	table = {fields = {"copy", "getn"}},
 
 	-- Minetest
-	"dump", "print"
+	"dump", "print",
+
+	-- mtscad
+	"merge_table"
 }

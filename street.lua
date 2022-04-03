@@ -1,4 +1,15 @@
 return function(ctx, opts)
+    opts = merge_table({
+        width = 16,
+        length = 10,
+        borderwidth = 3,
+        border = "default:stonebrick",
+        pavement = {
+            ["default:cobble"] = 1,
+            ["default:stone"] = 2
+        }
+    }, opts)
+
     ctx
     :with(opts.border)
     :cube(opts.borderwidth, 2, opts.length)
@@ -8,15 +19,4 @@ return function(ctx, opts)
     :translate(opts.width - (2*opts.borderwidth), 0, 0)
     :with(opts.border)
     :cube(opts.borderwidth, 2, opts.length)
-end, {
-    defaults = {
-        width = 16,
-        length = 10,
-        borderwidth = 3,
-        border = "default:stonebrick",
-        pavement = {
-            ["default:cobble"] = 1,
-            ["default:stone"] = 2
-        }
-    }
-}
+end

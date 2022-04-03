@@ -1,9 +1,10 @@
 local partition = load("partition")
 
 return function(ctx, opts)
-    opts = opts or {}
-    opts.size_x = opts.size_x or 50
-    opts.size_y = opts.size_y or 50
+    opts = merge_table({
+        size_x = 50,
+        size_y = 50
+    }, opts)
 
     local partitions = partition({
         size_x = opts.size_x,

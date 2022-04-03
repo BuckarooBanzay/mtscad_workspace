@@ -22,6 +22,13 @@ local function window(ctx, opts)
 end
 
 return function(ctx, opts)
+    opts = merge_table({
+        border = "default:stone",
+        glass = "default:glass",
+        slope = "moreblocks:slope_stone",
+        size = 5
+    }, opts)
+
     --[[
    ctx
    :execute(window, opts)
@@ -39,11 +46,4 @@ return function(ctx, opts)
    :rotate(0, -90, 0)
    :execute(window, opts)
 
-end, {
-    defaults = {
-        border = "default:stone",
-        glass = "default:glass",
-        slope = "moreblocks:slope_stone",
-        size = 5
-    }
-}
+end
