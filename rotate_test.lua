@@ -50,6 +50,6 @@ return function(ctx, opts)
     }, opts)
 
     ctx
-    :rotate(90, 0, 90)
+    :rotate(90, 90, 0)
     :execute(window, opts)
 end
