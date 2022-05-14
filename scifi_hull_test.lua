@@ -1,4 +1,4 @@
-local scifi_hull = load("scifi_hull")
+local scifi_hull = mtscad.load_module("scifi_hull")
 
 return function(ctx)
 

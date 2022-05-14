@@ -1,6 +1,6 @@
 --[[
 -- usage:
-local stairs = load("stairs")
+local stairs = mtscad.load_module("stairs")
 
 return function(ctx)
     ctx
@@ -14,11 +14,11 @@ return function(ctx)
     })
 end
 --]]
-require_mod("default")
-require_mod("moreblocks")
+mtscad.require_mod("default")
+mtscad.require_mod("moreblocks")
 
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         height = 4,
         width = 5,
         slopes = "moreblocks:slope_stone",

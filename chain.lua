@@ -42,7 +42,7 @@ local function full_chain(ctx, opts)
 end
 
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         fullnode = "default:steelblock",
         slopenode = "moreblocks:slope_steelblock"
     }, opts)

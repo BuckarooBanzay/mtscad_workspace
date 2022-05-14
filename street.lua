@@ -1,5 +1,5 @@
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         width = 16,
         length = 10,
         borderwidth = 3,

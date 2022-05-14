@@ -1,4 +1,4 @@
-local stairs = load("stairs")
+local stairs = mtscad.load_module("stairs")
 local defaults = {
     height = 4,
     width = 5,

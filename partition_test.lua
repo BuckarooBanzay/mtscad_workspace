@@ -1,7 +1,7 @@
 
-local partition = load("partition")
-require_mod("default")
-require_mod("wool")
+local partition = mtscad.load_module("partition")
+mtscad.require_mod("default")
+mtscad.require_mod("wool")
 
 local nodes = {
     "default:glass",

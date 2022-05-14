@@ -1,9 +1,11 @@
-local chain = load("chain")
+local chain = mtscad.load_module("chain")
 
 
 return function(ctx)
-    ctx
-    :rotate(90, 0, 0)
-    :rotate(0, 0, 90)
-    :execute(chain)
+    for i=0,5 do
+        ctx
+        :rotate(0, 90, 0)
+        :translate(i*12, 0, 0)
+        :execute(chain)
+    end
 end

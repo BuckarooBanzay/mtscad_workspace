@@ -1,8 +1,8 @@
-local partition = load("partition")
-require_mod("scifi_nodes")
+local partition = mtscad.load_module("partition")
+mtscad.require_mod("scifi_nodes")
 
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         size_x = 50,
         size_y = 50
     }, opts)

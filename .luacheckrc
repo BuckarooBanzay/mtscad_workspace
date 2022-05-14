@@ -7,6 +7,11 @@ read_globals = {
 	"dump", "print",
 
 	-- mtscad
-	"merge_table",
-	"require_mod"
+	mtscad = {
+		fields = {
+			"merge",
+			"load_module",
+			"require_mod"
+		}
+	}
 }

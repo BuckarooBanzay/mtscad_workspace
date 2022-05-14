@@ -1,6 +1,6 @@
 
-require_mod("scifi_nodes")
-require_mod("moreblocks")
+mtscad.require_mod("scifi_nodes")
+mtscad.require_mod("moreblocks")
 
 local function slice(ctx, opts)
     local fn = opts.full_node
@@ -42,7 +42,7 @@ local function window(ctx, opts)
 end
 
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         full_node = "scifi_nodes:blackdmg",
         slope_node = "scifi_nodes:slope_blackdmg_half",
         slope_raised_node = "scifi_nodes:slope_blackdmg_half_raised",

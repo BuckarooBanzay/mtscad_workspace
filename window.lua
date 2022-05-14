@@ -22,28 +22,16 @@ local function window(ctx, opts)
 end
 
 return function(ctx, opts)
-    opts = merge_table({
+    opts = mtscad.merge({
         border = "default:stone",
         glass = "default:glass",
         slope = "moreblocks:slope_stone",
         size = 5
     }, opts)
 
-    --[[
    ctx
-   :execute(window, opts)
-   :translate(10, 0, 0)
-   :rotate(0, 90, 0)
-   :execute(window, opts)
-
-   ctx
-   :translate(0, 0, 10)
-   :rotate(0, 270, 0)
-   :execute(window, opts)
-    --]]
-   ctx
-   --:translate(10, 0, 10)
-   :rotate(0, -90, 0)
+   :translate(0, 0, 0)
+   :rotate(0, 180, 0)
    :execute(window, opts)
 
 end
