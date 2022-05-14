@@ -10,7 +10,7 @@ local defaults = {
 return function(ctx)
     ctx
     :translate(10,0,0)
-    :rotate(0, -90, 0)
+    :rotate(90, 0, 0)
     :execute(stairs, defaults)
     :translate(3, 3, 0)
     :execute(stairs, defaults)
