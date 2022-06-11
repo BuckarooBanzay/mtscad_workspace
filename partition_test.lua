@@ -1,5 +1,5 @@
 
-local partition = mtscad.load_module("partition")
+local partition = mtscad.load_module("lib/partition")
 mtscad.require_mod("default")
 mtscad.require_mod("wool")
 

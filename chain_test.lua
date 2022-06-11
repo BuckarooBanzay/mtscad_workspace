@@ -1,4 +1,4 @@
-local chain = mtscad.load_module("chain")
+local chain = mtscad.load_module("lib/chain")
 
 
 return function(ctx)
