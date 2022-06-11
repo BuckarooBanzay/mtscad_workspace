@@ -1,27 +1,16 @@
 mtscad.require_mod("default")
 
-local slopes = "moreblocks:slope_stone"
-local filler = "default:stone"
-
-local function test(ctx)
-    ctx
-    :with(filler)
-    :line(0, 5, 5)
-
-    ctx
-    :with(slopes)
-    :translate(0, 1, 0)
-    :line(0, 4, 4)
-
-    ctx
-    :with(slopes)
-    :slope(0, -1, 1)
-    :translate(0, 0, 1)
-    :line(0, 4, 4)
-end
+local smooth_polygon = mtscad.load_module("lib/smooth_polygon")
 
 return function(ctx)
     ctx
-    :rotate(270, 0, 0)
-    :execute(test)
+    :with("default:stone")
+    :execute(smooth_polygon, {
+        path = {
+            {0,0,0},
+            {0,4,0},
+            {0,8,4},
+            {0,8,8}
+        }
+    })
 end
