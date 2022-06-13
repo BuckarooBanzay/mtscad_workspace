@@ -23,17 +23,12 @@ local function quarter(ctx, opts)
     :translate(0, opts.border-1, 0)
     :line(opts.border-1, -opts.border+1, 0)
 
-    if opts.fill then
-        -- fill window
-        -- TODO
-    else
-        -- inner slopes
-        ctx
-        :with(opts.slope)
-        :slope(1, 1, 0)
-        :translate(1, opts.border, 0)
-        :line(opts.border-1, -opts.border+1, 0)
-    end
+    -- inner slopes
+    ctx
+    :with(opts.slope)
+    :slope(1, 1, 0)
+    :translate(1, opts.border, 0)
+    :line(opts.border-1, -opts.border+1, 0)
 end
 
 local function apply_rotate_quarters(ctx, opts)
@@ -53,17 +48,19 @@ local function apply_rotate_quarters(ctx, opts)
 
     ctx
     :translate(opts.width-1, 0, 0)
-    :rotate(0, 0, 90)
+    :rotate(0, 180, 0)
     :execute(opts.fn, opts.opts)
 
     ctx
     :translate(0, opts.height-1, 0)
-    :rotate(0, 0, 270)
+    :rotate(180, 0, 0)
     :execute(opts.fn, opts.opts)
 
     ctx
-    :translate(opts.width-1, opts.height-1, 0)
-    :rotate(0, 0, 180)
+    :translate(0, opts.height-1, 0)
+    :rotate(180, 0, 0)
+    :translate(opts.width-1, 0, 0)
+    :rotate(0, 180, 0)
     :execute(opts.fn, opts.opts)
 end
 
@@ -73,7 +70,6 @@ return function(ctx, opts)
         width = 16,
         border = 5,
         node = "default:stone",
-        fill = false,
         slope = "moreblocks:slope_stone"
     }, opts)
 
