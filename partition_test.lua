@@ -19,13 +19,16 @@ local nodes = {
     "wool:violet"
 }
 
-return function(ctx)
-    -- partition
-    local partitions = partition({
+return function(ctx, opts)
+    opts = mtscad.merge({
         size_x = 30,
         size_y = 30,
         min_size = 4
-    })
+    }, opts)
+
+    -- partition
+    local partitions = partition(opts)
+
     print("Got " .. #partitions .. " partitions")
 
     -- visualize
