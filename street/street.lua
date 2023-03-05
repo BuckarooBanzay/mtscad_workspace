@@ -1,8 +1,7 @@
+local defaults = mtscad.load_module("defaults")
+
 return function(ctx, opts)
-    opts = mtscad.merge({
-        width = 16,
-        length = 10,
-        borderwidth = 3,
+    opts = mtscad.merge(defaults, {
         border = "default:stonebrick",
         pavement = {
             ["default:cobble"] = 1,
