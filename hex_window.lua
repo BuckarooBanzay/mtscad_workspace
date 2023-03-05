@@ -63,7 +63,7 @@ return function(ctx, opts)
     for xi=0,1 do
         for yi=0,1 do
             ctx
-            :rotate(90, 0, 0)
+            :rotate(0, 0, 0)
             :translate((3*(yi%2))+(xi*6),5*yi,0)
             :execute(window, opts)
         end

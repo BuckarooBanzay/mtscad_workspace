@@ -1,4 +1,4 @@
-local partition = mtscad.load_module("partition")
+local partition = mtscad.load_module("lib/partition")
 mtscad.require_mod("scifi_nodes")
 
 return function(ctx, opts)
