@@ -3,11 +3,11 @@ mtscad.require_mod("scifi_nodes")
 local function rect(ctx, opts)
     local l = opts.length
     ctx:polygon({
-        {0,0,0},
-        {l,0,0},
-        {l,0,l},
-        {0,0,l},
-        {0,0,0}
+        {0,0},
+        {l,0},
+        {l,l},
+        {0,l},
+        {0,0}
     })
 end
 

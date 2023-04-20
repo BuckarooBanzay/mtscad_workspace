@@ -36,7 +36,7 @@ return function(ctx, opts)
     -- slopes above
     ctx
     :with(opts.slopes)
-    :slope(-1, 1, 0)
+    :param2(1)
     :translate(0, 1, 0)
     :line(opts.height-2, opts.height-2, 0)
     :translate(0, 0, opts.width-1)
@@ -45,7 +45,7 @@ return function(ctx, opts)
     -- slopes below
     ctx
     :with(opts.slopes)
-    :slope(1, -1, 0)
+    :param2(21)
     :translate(1, 0, 0)
     :line(opts.height-2, opts.height-2, 0)
     :translate(0, 0, opts.width-1)
@@ -55,7 +55,7 @@ return function(ctx, opts)
     for z=1,opts.width-2 do
         ctx
         :with(opts.stairs)
-        :slope(-1, 1, 0)
+        :param2(1)
         :translate(0, 0, z)
         :line(opts.height-1, opts.height-1, 0)
     end

@@ -19,14 +19,14 @@ local function quarter(ctx, opts)
     -- outer slopes
     ctx
     :with(opts.slope)
-    :slope(-1, -1, 0)
+    :param2(23)
     :translate(0, opts.border-1, 0)
     :line(opts.border-1, -opts.border+1, 0)
 
     -- inner slopes
     ctx
     :with(opts.slope)
-    :slope(1, 1, 0)
+    :param2(3)
     :translate(1, opts.border, 0)
     :line(opts.border-1, -opts.border+1, 0)
 end
