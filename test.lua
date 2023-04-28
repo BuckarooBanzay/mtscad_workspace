@@ -1,8 +1,10 @@
-mtscad.require_mod("default")
-
-local octa_pane = mtscad.load_module("octa_pane")
+local octagon = mtscad.load_module("lib/octagon")
 
 return function(ctx)
     ctx
-    :execute(octa_pane, {})
+    :with("default:stone")
+    :execute(octagon, {
+        size_x = 25,
+        size_y = 15
+    })
 end
